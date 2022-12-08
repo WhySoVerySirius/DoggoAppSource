@@ -28,7 +28,7 @@ export default function Register() {
 
     const submitData = e => {
         e.preventDefault();
-        const veislinis = data.breeds.filter(breed=>breed.Name == selectedBreed.current.value)
+        const veislinis = data.breeds.filter(breed=>breed.Name === selectedBreed.current.value)
         sendData(createDataObject(veislinis.length>0?veislinis[0].Id:null));
     }
 

@@ -1,5 +1,4 @@
 import React from "react";
-import { useRef } from "react";
 import { useState } from "react";
 import BreedInfo from "./BreedInfo";
 

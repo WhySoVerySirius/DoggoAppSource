@@ -16,8 +16,8 @@ export default function BreedInfo({selectedBreed}) {
             <div className="d-flex justify-content-between">
                 <div className="mx-1">
                     <div className="border-bottom">LifeSpan : {breed.Life_Span?breed.Life_Span:'No data'}</div>
-                    <div className="border-bottom">Height : {breed.Height && breed.Height != 'NaN'?breed.Height + ' cm':"No data"}</div>
-                    <div className="border-bottom">Weight : {breed.Weight && breed.Weight != 'NaN'?breed.Weight + ' kg':"No data"}</div>
+                    <div className="border-bottom">Height : {breed.Height && breed.Height !== 'NaN'?breed.Height + ' cm':"No data"}</div>
+                    <div className="border-bottom">Weight : {breed.Weight && breed.Weight !== 'NaN'?breed.Weight + ' kg':"No data"}</div>
                     <div className="border-bottom">Temperament : {breed.Temperament?breed.Temperament:"No data"}</div>
                     <div className="border-bottom">Origin : {breed.Origin?breed.Origin:"No data"}</div>
                 </div>
