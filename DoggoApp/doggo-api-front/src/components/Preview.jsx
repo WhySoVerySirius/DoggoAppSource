@@ -48,7 +48,7 @@ export default function Preview() {
             alert(error.message)
         }
     }
-
+    
     const updateAppointment = async (data) => {
         try {
             const response = await axios.put(`https://localhost:7183/preview/edit/${selected.uuid}`,JSON.stringify(data),{headers:{'Content-Type':'application/json'}});
