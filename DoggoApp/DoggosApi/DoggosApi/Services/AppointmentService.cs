@@ -27,6 +27,8 @@ namespace DoggosApi.Services
                 && _context.Appointments.Where(x=>x.Uuid == appointment.Uuid).Include(appointment => appointment.Breed).FirstOrDefault() is Appointment found
                 && found != null
                 && found.Uuid == id
+                && appointment.Uuid == found.Uuid
+                && appointment.Id == found.Id
             )
             {
                 Breed? breed = _context.Breeds.Find(appointment.BreedID);
@@ -38,8 +40,12 @@ namespace DoggosApi.Services
                 {
                     found.Breed = breed;
                 };
-                _context.SaveChanges();
-                return GetAppointment(appointment.Uuid);
+                try {
+                    _context.SaveChanges();
+                    return GetAppointment(appointment.Uuid);
+                } catch (Exception ex) {
+                    return null;
+                }
             }
             return null;
         }
